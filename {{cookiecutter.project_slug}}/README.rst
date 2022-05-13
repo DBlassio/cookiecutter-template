@@ -3,7 +3,7 @@
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
 
-# This is the repository of the {{ cookiecutter.project_name }}
+# This is the repository for the project: {{ cookiecutter.project_name }}
 
 
 

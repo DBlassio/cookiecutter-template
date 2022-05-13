@@ -1,43 +1,50 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 {% for _ in cookiecutter.project_name %}={% endfor %}
 {{ cookiecutter.project_name }}
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
-{% if is_open_source %}
-.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg
-        :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}
 
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg
-        :target: https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+# This is the repository of the {{ cookiecutter.project_name }}
 
-.. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest
-        :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-{%- endif %}
-
-{% if cookiecutter.add_pyup_badge == 'y' %}
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg
-     :target: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/
-     :alt: Updates
-{% endif %}
 
 
 {{ cookiecutter.project_short_description }}
 
-{% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
-{% endif %}
 
-Features
---------
+## What does the repository have?
 
-* TODO
+* _/notebooks_
+* _/src_
+* _/utilities_
+* _/api_
+* _/dataset_
+* _/model_
+* _/.github/workflows_
 
-Credits
--------
+### _/notebooks_
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+Notebooks where a compacted form of the results obtained.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+### _/src_
+
+This folder contains the files used to make the retraining Pipeline
+
+### _/utilities_
+
+This folder contains the files to set enverionment behaviour
+
+### _/api_
+
+The api folder contains all files related to the API service, it uses FastAPI as main framework
+
+### _/dataset_
+
+This folder is intended to save the dataset files, which are being tracked remotely using [Data Version Control](https://dvc.org/) and the .dvc files that have the hashes
+
+### _/models_
+
+As ```/dataset``` this folder contains de models files tracked with dvc
+
+### _/.github/workflows_
+
+This folder contains all workflow for continuous integration and deployment, testing and continuous training, used in github actions.
+
